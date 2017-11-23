@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<form method="POST" id="addBlog">
+	<form method="POST" action="nowy.php" id="addBlog">
 		Nazwa bloga:<br>
 		<input type="text" name="blogName" ><br>
 		Nazwa użytkownika:<br>
@@ -16,8 +16,8 @@
 		Hasło:<br>
 		<input type="password" name="password" ><br>
 		Opis bloga:<br>
-		<textarea></textarea><br>
-		<input type="submit" >
+		<textarea name="description"></textarea><br>
+		<input type="submit">
 		<input type="reset" value="Wyczyść">
 	</form>
 </body>
