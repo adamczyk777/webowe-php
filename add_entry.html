@@ -3,12 +3,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 
 <head>
-	<title>JĘZYKI PROGRAMOWANIA</title>
+	<title>Dodaj Wpis</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
-	
+	<form method="POST" id="addBlog">
+		Nazwa użytkownika:<br>
+		<input type="text" name="blogName" ><br>
+		Hasło:<br>
+		<input type="password" name="password" ><br>
+		Wpis<br>
+		<textarea></textarea><br>
+		Data:<br>
+		<input type="date" name="date"><br>
+		Czas:<br>
+		<input type="time" name="time"><br>
+		Załączniki:<br>
+		Plik 1:<br>
+		<input type="file" name="file1"><br>
+		Plik 2:<br>
+		<input type="file" name="file2"><br>
+		Plik 3:<br>
+		<input type="file" name="file3"><br>
+		<input type="submit" value="Wyślij">
+	</form>
 </body>
 
 </html>

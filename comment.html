@@ -3,12 +3,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 
 <head>
-	<title>JĘZYKI PROGRAMOWANIA</title>
+	<title>Komentarz</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
-	
+	<form method="get">
+		Typ komentarza:<br>
+		<select name="commentType" id="selectType">
+			<option value="negative">Negatywny</option>
+			<option selected="selected" value="neutral">Neutralny</option>
+			<option value="positive">Pozytywny</option>
+		</select><br>
+		Komentarz:<br>
+		<textarea name="comment"></textarea><br>
+		Imię/Pseudonim/Nazwisko:<br>
+		<input type="text" name="commenterName"><br>
+		<input type="submit" value="Skomentuj">
+	</form>
+
 </body>
 
 </html>
