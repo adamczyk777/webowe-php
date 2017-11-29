@@ -2,10 +2,7 @@
 
 //post data
 $username = $_POST['username'];
-print_r($username."<br>");
 $password = md5($_POST['password']);
-print_r($password."<br>");
-print_r($_POST['password']."<br>");
 $date = $_POST['date'];
 $time = $_POST['time'];
 $file1 = $_POST['file1'];
@@ -17,21 +14,21 @@ foreach($blogs as $path) {
     if($path != "." && $path != ".." && is_dir("blogs/" . $path)) {
         if($file = fopen("blogs/".$path."/info.txt", 'r')) {
             $line1 = trim(fgets($file));
-            print_r($line1."<br>");
             $line2 = trim(fgets($file));
-            print_r($line2."<br>");
+            $line3 = trim(fgets($file));
             if ($line1 == $username && $line2 == $password) {
-                //tu tworzymyplik
+                $filename = "";
+                $filename .= preg_replace("/-/", "", $date);
+                $filename .= preg_replace("/:/", "", $time);
+                $filename .= date("s");
+                $filename .= rand(10, 99);
+                if (file_put_contents("blogs/" . $path . "/" . $filename, $_POST['text']) === true) {
+                    print_r("file written");
+                } else {
+                    echo("error");
+                }
             }
         }
     }
-    print_r('koniec'."<br>");
-    
-    // $local_uname = fgets($file);
-    // $local_pass = md5(fgets($file));
-    // if($local_uname == $username && $local_pass == $password) {
-    //     $newfile = fopen("blogs/".$blogfile."/".$date."blg", 'w');
-    //     file_put_contents('blogs/'.$blogfile.'/'.$date.'.blg', "heythere");
-    // }
 }
 ?>
