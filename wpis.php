@@ -5,9 +5,6 @@ $username = $_POST['username'];
 $password = md5($_POST['password']);
 $date = $_POST['date'];
 $time = $_POST['time'];
-echo("<pre>");
-print_r($_FILES);
-
 $blogs = scandir("blogs/");
 // iteracja po wszystkich blogach i szukanie takiego aby nazwa uzytkownika zgadzała sie z tym co chcemy znalezc
 foreach($blogs as $path) {
@@ -25,9 +22,8 @@ foreach($blogs as $path) {
                 $filename .= date("s");
                 $filename .= rand(10, 99);
                 if (file_put_contents("blogs/" . $path . "/" . $filename, $_POST['text']) === false) {
-                    echo("error");
+                    echo("Błąd zapisu do pliku");
                 } else {
-                    print_r("file written");
                     $counter = 0;
                     foreach($_FILES as $uploadedFile) {
                         if ($uploadedFile['error'] === 0) {
@@ -40,8 +36,10 @@ foreach($blogs as $path) {
                         }
                     }
                 }
+                echo("Dodano Wpis");
             }
         }
     }
 }
+header("refresh:5;url=blog.php");
 ?>

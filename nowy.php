@@ -7,5 +7,5 @@ if(!file_exists('./blogs/'.$_POST['blogName'])) {
 } else {
     echo("Katalog już istnieje :)");
 }
-//head("Location.html");
+header("refresh:5;url=blog.php?nazwa=" . $_POST['blogName']);
 ?>
