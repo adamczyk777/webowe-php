@@ -11,9 +11,18 @@ if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "
             echo("<li>");
             echo("<p>".file_get_contents("blogs/".$_GET['nazwa']."/".$post));
             echo("<br> załączniki:");
+            $attachments = scandir("blogs/".$_GET['nazwa']."/");
+            $attachments = preg_grep("/^(".$post.".\.).*/", $attachments);
+            foreach($attachments as $attachment) {
+                echo('<a href="'."blogs/".$_GET['nazwa']."/".$attachment.'" download>'.$attachment.'</a>');
+            }
             echo("<br> komentarze:");
+            $comments = array_diff(scandir("blogs/".$_GET['nazwa']."/" . $post . ".k"), array('.', '..'));
+            foreach($comments as $comment) {
+                echo("<br>" . file_get_contents("blogs/".$_GET['nazwa']."/" . $post . ".k/" . $comment));
+            }   
             echo("<br>");
-            echo('<a href="./koment.php?postno='.$post."&blogname=".$_GET['nazwa'].'">Komentuj</a>');
+            echo('<a href="./comment.php?postno='.$post."&blogname=".$_GET['nazwa'].'">Komentuj</a>');
             echo("</p>");
             echo("</li>");
         }

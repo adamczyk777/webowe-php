@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
-
+<?php
+	echo(file_get_contents("header.html"));
+	$post = $_GET['postno'];
+	$blog = $_GET['blogname'];
+?>
 <head>
 	<title>Komentarz</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
-	<form method="get" action="koment.php">
+	<form method="post" action="koment.php">
 		Typ komentarza:<br>
 		<select name="commentType" id="selectType">
 			<option value="negative">Negatywny</option>
@@ -19,6 +20,8 @@
 		<textarea name="comment"></textarea><br>
 		Imię/Pseudonim/Nazwisko:<br>
 		<input type="text" name="commenterName"><br>
+		<input type="hidden" name="postno" value="<?php echo($post)?>" />
+		<input type="hidden" name="blogname" value="<?php echo($blog)?>" />
 		<input type="submit" value="Skomentuj">
 		<input type="reset" value="Wyczyść">
 	</form>
