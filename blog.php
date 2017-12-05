@@ -1,4 +1,5 @@
 <?php
+file_get_contents("header.html");
 include_once("navigation.php");
 if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "")) {
     $files = scandir("blogs/". $_GET['nazwa']);
