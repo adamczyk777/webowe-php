@@ -17,7 +17,7 @@ foreach($blogs as $path) {
             if ($line1 == $username && $line2 == $password) {
                 // sklejanie nazwy pliku ze wpisem
                 $filename = "";
-                $filename .= preg_replace("/-/", "", $date);
+                $filename .= preg_replace("/./", "", $date);
                 $filename .= preg_replace("/:/", "", $time);
                 $filename .= date("s");
                 $filename .= rand(10, 99);
