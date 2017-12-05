@@ -27,7 +27,8 @@ if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "
             if (file_exists("blogs/".$_GET['nazwa']."/" . $post . ".k")) {
                 $comments = array_diff(scandir("blogs/".$_GET['nazwa']."/" . $post . ".k"), array('.', '..'));
                 foreach($comments as $comment) {
-                    echo("<br>" . file_get_contents("blogs/".$_GET['nazwa']."/" . $post . ".k/" . $comment));
+                    $file = fopen("blogs/".$_GET['nazwa']."/" . $post . ".k/" . $comment, "r");
+                    echo("<br>" . "Typ Komentarza: " .  fgets($file).", Data dodania:".fgets($file).", Autor: " . fgets($file) . ", Komentarz: " . fgets($file));
                 }
             } else {
                 echo("Nie zamieszczono jeszcze żadnych komentarzy");
