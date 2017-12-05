@@ -1,5 +1,11 @@
+<?php file_get_contents("header.html"); ?>
+
+<head>
+    <title>Blogi</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+</head>
+
 <?php
-file_get_contents("header.html");
 include_once("navigation.php");
 if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "")) {
     $files = scandir("blogs/". $_GET['nazwa']);
