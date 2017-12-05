@@ -8,7 +8,7 @@ $time = $_POST['time'];
 $blogs = scandir("blogs/");
 // iteracja po wszystkich blogach i szukanie takiego aby nazwa uzytkownika zgadzała sie z tym co chcemy znalezc
 foreach($blogs as $path) {
-    if($path != "." && $path != ".." && is_dir("blogs/" . $path)) {
+    if($path != "." && $path != ".." and is_dir("blogs/" . $path)) {
         if($file = fopen("blogs/".$path."/info.txt", 'r')) {
             // czytanie pierwszych trzech linijek pliku info
             $line1 = trim(fgets($file));

@@ -7,15 +7,15 @@
 <body>
 	<form method="POST" id="addBlog" action="wpis.php" enctype="multipart/form-data">
 		Nazwa użytkownika:<br>
-		<input type="text" name="username" ><br>
+		<input type="text" name="username" required><br>
 		Hasło:<br>
-		<input type="password" name="password" ><br>
+		<input type="password" name="password" required><br>
 		Wpis<br>
-		<textarea name="text"></textarea><br>
+		<textarea name="text" required></textarea><br>
 		Data:<br>
-		<input type="date" name="date"><br>
+		<input type="date" name="date" required><br>
 		Czas:<br>
-		<input type="time" name="time"><br>
+		<input type="time" name="time" required><br>
 		Załączniki:<br>
 		Plik 1:<br>
 		<input type="file" name="file1"><br>

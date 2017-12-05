@@ -7,7 +7,7 @@
 
 <?php
 include_once("navigation.php");
-if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "")) {
+if(array_key_exists('nazwa', $_GET) and file_exists("blogs/" . $_GET['nazwa'] . "")) {
     $files = scandir("blogs/". $_GET['nazwa']);
     echo("<h1>".$_GET['nazwa']."</h1>");
     echo('<p>posty:</p>');
@@ -42,7 +42,7 @@ if(array_key_exists('nazwa', $_GET) && file_exists("blogs/" . $_GET['nazwa'] . "
     echo("</ul>");
 
 } else {
-    $blogs = scandir('blogs/');
+    $blogs = scandir("blogs/");
     $blogs = array_diff($blogs, array('.', '..'));
     foreach($blogs as $blog) {
         $file = fopen("blogs/" . $blog . "/info.txt", "r");
