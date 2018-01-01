@@ -4,6 +4,7 @@ echo(file_get_contents("navigation.php")); ?>
 	<title>Dodaj Wpis</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<script src="./dateFormatter.js"></script>
+	<script src="./validateForm.js"></script>
 	<script>
 		console.log('test');
 		var now = new Date();
@@ -20,7 +21,7 @@ echo(file_get_contents("navigation.php")); ?>
 </head>
 
 <body>
-	<form method="POST" id="addBlog" action="wpis.php" enctype="multipart/form-data">
+	<form method="POST" id="addBlog" onsubmit="return validateForm()" action="wpis.php" enctype="multipart/form-data">
 		Nazwa użytkownika:<br>
 		<input type="text" name="username" required><br>
 		Hasło:<br>
