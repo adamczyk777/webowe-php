@@ -1,5 +1,6 @@
 <?php
 	echo(file_get_contents("header.html"));
+	echo(file_get_contents("navigation.php"));
 	$post = $_GET['postno'];
 	$blog = $_GET['blogname'];
 ?>

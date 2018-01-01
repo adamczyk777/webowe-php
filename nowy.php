@@ -20,5 +20,5 @@ if(!file_exists('./blogs/'.$blog_name) and !$flag_already_exists and $_POST['use
 } else {
     echo("Katalog już istnieje, lub użytkownik posiada już bloga :)");
 }
-header("refresh:2;url=blog.php?nazwa=" . $_POST['blogName']);
+header("refresh:2;url=blog.php?nazwa=" . $blog_name);
 ?>

@@ -1,5 +1,6 @@
 <?php 
     file_get_contents("header.html");
+    file_get_contents("navigation.php");
     header("Location: blog.php");
 ?>
 <body>

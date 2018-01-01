@@ -7,7 +7,7 @@
 
 <?php
 include_once("navigation.php");
-if(array_key_exists('nazwa', $_GET) and file_exists("blogs/" . $_GET['nazwa'] . "")) {
+if(array_key_exists('nazwa', $_GET) and file_exists("blogs/" . $_GET['nazwa']) and $_GET['nazwa'] !== "") {
     $files = scandir("blogs/". $_GET['nazwa']);
     echo("<h1>".$_GET['nazwa']."</h1>");
     echo('<p>posty:</p>');
@@ -28,7 +28,7 @@ if(array_key_exists('nazwa', $_GET) and file_exists("blogs/" . $_GET['nazwa'] . 
                 $comments = array_diff(scandir("blogs/".$_GET['nazwa']."/" . $post . ".k"), array('.', '..'));
                 foreach($comments as $comment) {
                     $file = fopen("blogs/".$_GET['nazwa']."/" . $post . ".k/" . $comment, "r");
-                    echo("<br>" . "Typ Komentarza: " .  fgets($file).", Data dodania:".fgets($file).", Autor: " . fgets($file) . ", Komentarz: " . fgets($file));
+                    echo("<br>" . "Typ Komentarza: " .  fgets($fuile).", Data dodania:".fgets($file).", Autor: " . fgets($file) . ", Komentarz: " . fgets($file));
                 }
             } else {
                 echo("Nie zamieszczono jeszcze żadnych komentarzy");
@@ -41,6 +41,9 @@ if(array_key_exists('nazwa', $_GET) and file_exists("blogs/" . $_GET['nazwa'] . 
     }
     echo("</ul>");
 
+} else if (array_key_exists('nazwa', $_GET) && !file_exists("blogs/" . $_GET['nazwa']) && $_GET['nazwa'] !== "") {
+    echo("<br> nie ma takiego bloga");
+    header("refresh:3;url=blog.php");
 } else {
     $blogs = scandir("blogs/");
     $blogs = array_diff($blogs, array('.', '..'));

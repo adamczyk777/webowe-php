@@ -1,4 +1,7 @@
-<?php file_get_contents("header.html"); ?>
+<?php 
+file_get_contents("header.html");
+include("navigation.php");
+?>
 
 <head>
 	<title>Załóż Bloga</title>
