@@ -1,9 +1,30 @@
 function validateForm() {
+    var timeInput = document.getElementById("timeInput").value;
+
+    if (!timeInput.match("^[0-9]{2}:[0-9]{2}")) {
+        alert("Podana godzina jest niezgodna z formatem HH:MM.");
+        document.getElementById('timeInput').value = getCurrentTime();
+        return false;
+    }
+
+    var hour = timeInput.substring(0, 2);
+    var minute = timeInput.substring(3, 5);
+
+    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
+        alert('Podana godzina nie istnieje.');
+        document.getElementById('timeInput').value = getCurrentTime();
+        return false;
+    }
+
+    console.log(hour, minute);
+
+    // WALIDACJA DATY
     var dateInput = document.getElementById('dateInput').value;
 
     // Wstępna walidacja formatu tekstuw polu
     if (!dateInput.match("^[0-9]{4}-[0-9]{2}-[0-9]{2}$")) {
         alert("Podana data nie jest zgodna z formatem RRRR-MM-DD.");
+        document.getElementById('dateInput').value = getCurrentDate();
         return false;
     }
 
@@ -23,6 +44,7 @@ function validateForm() {
         || ((month === 4 || month === 6 || month === 9 || month === 11) && day > 30)
     ) {
         alert("Podana data nie istnieje.");
+        document.getElementById('dateInput').value = getCurrentDate();
         return false;
     }
 }
