@@ -1,0 +1,125 @@
+/* Plik z wszystkimi stylami css do stron */
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+  }
+/* Ćwiczenie 1 */
+html {
+  font-family: 'Roboto', sans-serif;
+  background: grey;
+}
+
+h1 {
+  color: blue;
+  letter-spacing: 5px;
+}
+
+h2 {
+  color: red;
+}
+
+p {
+  text-indent: 1rem;
+}
+
+/* Ćwiczenie 2 */
+
+table {
+  background-color: grey;
+  border-color: red;
+}
+
+td:nth-child(1) {
+  background-color: wheat;
+}
+
+td:nth-child(3) {
+  background-color: wheat;
+}
+
+thead {
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+}
+
+tfoot {
+  background-color: brown;
+}
+
+/* Ćwiczenie 3 */
+
+ol {
+  list-style-type: upper-roman;
+}
+
+ol ol {
+  list-style-type: lower-roman;
+}
+
+ol ol ol {
+  list-style-type: lower-greek;
+}
+
+/* Ćwiczenie 4 */
+
+p img {
+  display: block;
+}
+
+.firstPhoto {
+  float: left;
+}
+
+.secondPhoto {
+  float: right;
+}
+
+/* Ćwiczenie 5 */
+.mainContainer {
+  max-width: 960px;
+  background: rgb(119, 119, 209);
+  margin-left: 250px;
+}
+
+.sideMenu {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: red;
+  float: left;
+}
+
+/* Ćwiczenie 6 */
+p::first-letter {
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.sideBarLink {
+  display: block;
+  padding: 5px;
+  background-color: pink;
+  text-align: center;
+  cursor: default;
+}
+
+.sideBarLink:hover {
+  background-color: aqua;
+  cursor: default;
+}
+
+.linksList {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.pageTitle {
+  letter-spacing: 3.6vw;
+  text-align: center;
+}
+
+.klirbof {
+  clear: both;
+}

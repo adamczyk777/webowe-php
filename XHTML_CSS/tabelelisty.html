@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+
+<head>
+    <title>Tabele i Listy</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link id="style" rel="stylesheet" title="style-default" type="text/css" href="styles.css">
+    <link id="style2" rel="stylesheet" title="style-second" type="text/css" href="styles2.css">
+    <link rel="stylesheet" type="text/css" media="print" href="print.css">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    <script src="stylesheets.js" type="application/javascript"></script>
+</head>
+
+<body>
+<h1 class="pageTitle">JĘZYKI PROGRAMOWANIA</h1>
+<div class="sideMenu">
+    <h1>Odnośniki do stron:</h1>
+    <ol class="linksList">
+        <li>
+            <a class="sideBarLink" href="./index.html">Ćwiczenie 1</a>
+        </li>
+        <li>
+            <a class="sideBarLink" href="./index2.html">Ćwiczenie 2</a>
+        </li>
+        <li>
+            <a class="sideBarLink" href="./tabelelisty.html">Ćwiczenie 3</a>
+        </li>
+        <li>
+            <a class="sideBarLink" href="./cw4.html">Ćwiczenie 4</a>
+        </li>
+    </ol>
+</div>
+<div class="mainContainer">
+    <h1>Tabela</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th colspan="2">head1</th>
+            <th colspan="2">head2</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td colspan="3">1</td>
+            <td>2</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr>
+            <td>I raz</td>
+            <td>I dwa</td>
+            <td>I trzy</td>
+            <td>I trzy</td>
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td colspan="2" rowspan="2">3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
+    <h1>Lista wielopoziomowa</h1>
+    <ol>
+        <li> Pierwszy element listy ponumerowanej
+            <ol>
+                <li>Lista nieponumerowana zagnieżdżona</li>
+                <li>Jakiś drugi jej element</li>
+                <li>Jakiś trzeci jej element</li>
+            </ol>
+        </li>
+        <li>Drugi w pierwszym poziomie
+            <ol>
+                <li> Numerowany w drugim poziomie
+                    <ol>
+                        <li>nienumerowany trzeci poziom :O</li>
+                        <li>nienumerowany trzeci poziom :O</li>
+                    </ol>
+                </li>
+                <li> Numeracja drugiego poziomu
+                    <ol>
+                        <li> Trzeci z numerkami
+                            <ol>
+                                <li>I kolejne
+                                    <ol>
+                                        <li>Ten to już zaszedł daleko</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li> jeszcze troche
+                        </li>
+                    </ol>
+                </li>
+                <li> Numeracja drugiego poziomu
+                </li>
+            </ol>
+        </li>
+    </ol>
+    <h1>Lista definicji kilku terminów</h1>
+    <dl>
+        <dt>Programowanie imperatywne</dt>
+        <dd>paradygmat programowania, który opisuje proces wykonywania jako sekwencję instrukcji zmieniających stan
+            programu. Podobnie
+            jak tryb rozkazujący w lingwistyce wyraża żądania jakichś czynności do wykonania.
+        </dd>
+        <dt>Programowanie funkcyjne</dt>
+        <dd>filozofia i metodyka programowania będąca odmianą programowania deklaratywnego, w której funkcje należą do
+            wartości podstawowych,
+            a nacisk kładzie się na wartościowanie (często rekurencyjnych) funkcji, a nie na wykonywanie poleceń.
+        </dd>
+        <dt>Programowanie obiektowe</dt>
+        <dd> paradygmat programowania, w którym programy definiuje się za pomocą obiektów – elementów łączących stan
+            (czyli dane, nazywane
+            najczęściej polami) i zachowanie (czyli procedury, tu: metody). Obiektowy program komputerowy wyrażony jest
+            jako zbiór
+            takich obiektów, komunikujących się pomiędzy sobą w celu wykonywania zadań.
+        </dd>
+    </dl>
+    <div class="obrazy_valid">
+
+    </div>
+    <div id="alternativeCss">
+        <p>Style do wyboru:</p>
+        <select id="stylesSelect" onchange="setCSS(this.value)"></select>
+    </div>
+</div>
+
+</body>
+
+</html>

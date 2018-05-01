@@ -1,0 +1,38 @@
+/* Stylesheet for print page */
+
+@media print {
+    .sideMenu {
+        display: none;
+    }
+    .mainContainer {
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    h2 {
+        color: black;
+    }
+
+    h3 {
+        color: black;
+    }
+
+    .obrazy_valid {
+        display: none;
+    }
+
+    table,
+    td {
+        border: 1px solid black;
+    }
+
+    img {
+        display: none !important;
+    }
+
+}
